@@ -41,6 +41,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--SpringCloudAlibaba的依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -59,6 +68,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
         </dependency>
     </dependencies>
 </project>
