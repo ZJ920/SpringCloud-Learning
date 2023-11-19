@@ -1,20 +1,25 @@
 server:
   port: 8081
 spring:
-  application:
-    name: userservice
+#  application:
+#    name: userservice
   datasource:
     url: jdbc:mysql://localhost:3306/cloud_user?useSSL=false
     username: root
     password: 162278
     driver-class-name: com.mysql.jdbc.Driver
-  #nacos
+ #nacos
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      #server-addr: 127.0.0.1:8848
       discovery:
-        cluster-name: SH
+        #cluster-name: SH
         namespace: 878ee113-48cc-437a-98fd-0bcb4e2be10b #命名空间
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
 
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
@@ -26,7 +31,5 @@ logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
 
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://127.0.0.1:10086/eureka
+pattern:
+  name: "本地环境配置"
