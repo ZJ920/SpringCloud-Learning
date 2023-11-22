@@ -1,6 +1,7 @@
 package cn.itcast.order.pojo;
 
 import lombok.Data;
+import zj.sdwz.feign.pojo.User;
 
 @Data
 public class Order {

@@ -5,8 +5,8 @@ spring:
     active: dev #开发环境，这里是dev
   cloud:
     nacos:
-      #server-addr: localhost:8848 # Nacos地址
-      server-addr: localhost:80 # Nacos地址
+      server-addr: localhost:8848 # Nacos地址
+      #server-addr: localhost:80 # Nacos地址：集群
       discovery:
         cluster-name: SH
       config:

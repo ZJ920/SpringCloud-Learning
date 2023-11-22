@@ -9,12 +9,12 @@ spring:
     password: 162278
     driver-class-name: com.mysql.jdbc.Driver
  #nacos
-  cloud:
-    nacos:
-      #server-addr: 127.0.0.1:8848
-      discovery:
-        #cluster-name: SH
-        namespace: 878ee113-48cc-437a-98fd-0bcb4e2be10b #命名空间
+#  cloud:
+#    nacos:
+#      server-addr: 127.0.0.1:8848
+#      discovery:
+#        cluster-name: SH
+#        namespace: 878ee113-48cc-437a-98fd-0bcb4e2be10b #命名空间
 
 #eureka:
 #  client:
