@@ -26,6 +26,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins: # 允许哪些网站的跨域请求
+              -  "http://localhost:8080"
               - "http://localhost:8090"
               - "http://www.leyou.com"
               - "http://127.0.0.1:5500"
