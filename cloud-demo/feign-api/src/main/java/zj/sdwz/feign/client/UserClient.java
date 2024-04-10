@@ -10,5 +10,5 @@ import zj.sdwz.feign.pojo.User;
 public interface UserClient {
     //向userservice服务发送Get请求
     @GetMapping("user/{id}")
-    User findById(@PathVariable Long id);
+    User findById(@PathVariable Long id); 
 }
