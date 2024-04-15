@@ -4,11 +4,31 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class FanoutConfig {
+
+    //序列化配置
+    @Bean
+    public MessageConverter jsonMessageConverter(){
+        return new Jackson2JsonMessageConverter();
+    }
+
+    @Bean
+    public Queue simpleQueue() {
+        //创建一个名为"simple.queue"的队列
+        return new Queue("simple.queue", true, false, false);
+    }
+
+    @Bean
+    Queue objectQueue() {
+        //创建一个名为"object.queue"的队列
+        return new Queue("object.queue", true, false, false);
+    }
 
     @Bean
     public FanoutExchange fanoutExchange() {
@@ -30,7 +50,7 @@ public class FanoutConfig {
     @Bean
     public Binding bindingQueue1(Queue fanoutQueue1, FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(fanoutQueue1).to(fanoutExchange); // 将队列1绑定到交换机
-}
+    }
 
     @Bean
     public Binding bindingQueue2(Queue fanoutQueue2, FanoutExchange fanoutExchange) {
