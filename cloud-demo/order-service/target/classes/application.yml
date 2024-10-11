@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: orderservice #服务名称
+#  profiles:
+#    active: dev #开发环境
+  #nacos
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848 #nacos服务地址
+      #server-addr: 127.0.0.1:80 #nacos服务地址:集群
+      discovery:
+        cluster-name: HZ #集群名称
+      config:
+        file-extension: yaml
+        #namespace: 878ee113-48cc-437a-98fd-0bcb4e2be10b #命名空间
+  #数据库连接池
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_order?useSSL=false
+    username: root
+    password: 162278
+    driver-class-name: com.mysql.jdbc.Driver
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+#
+#userservice:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则
+
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+
+#feign:
+#  client:
+#    config:
+#      default: # default全局的配置
+#        loggerLevel: BASIC # 日志级别，BASIC就是基本的请求和响应信息
+#  httpclient:
+#    enabled: true # 开启feign对HttpClient的支持
+#    max-connections: 200 # 最大的连接数
+#    max-connections-per-route: 50 # 每个路径的最大连接数
